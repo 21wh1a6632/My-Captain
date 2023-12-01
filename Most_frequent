@@ -1,0 +1,10 @@
+def most_frequent(input_str):
+    char_frequency = {}
+    for char in input_str:
+        if char.isalpha():
+            char_frequency[char] = char_frequency.get(char, 0) + 1
+    sorted_frequency = sorted(char_frequency.items(), key=lambda x: x[1], reverse=True)
+    for char, freq in sorted_frequency:
+        print(f"{char}={freq:02d}", end=" ")
+user_input = input("Please enter a string: ")
+most_frequent(user_input)
